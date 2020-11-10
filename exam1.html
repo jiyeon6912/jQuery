@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+  <!-- 로컬메모리에 저장후 Jquery 연결은 일반적으로 개발시 활용하는 형태 / 파일복사시 ctrl+클릭 -->
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+  <!-- CDN 연결방식은 배포시 활용함 -->
+
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script> -->
+   <!-- CDN을 활용한 Jquery 연결방법 :integrity와 crossorigin는 보안에 관련된 사항이므로 생략가능  -->
+
+
+</head>
+<body>
+<header id="header">
+  <div class="logo">로고</div>
+  <div class="util">회원가입</div>
+  <div id="gnb">
+    <ul>
+      <li>메뉴1
+        <ul>
+          <li>메뉴1_1</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="visual">
+    <p>비주얼</p>
+  </div>
+
+  <div id="content">
+    <div class="left">왼쪽</div>
+    <div class="right">
+      <div class="util">오른쪽</div>
+    </div>
+  </div>
+
+  <div id="banner">베너</div>
+
+  <div id="footer">푸터</div>
+</header>
+
+  <script>
+    // $('h1'). $는 jQuery 객체임을 의미하고 .이후에 매서드를 사용할 수 있다.
+    $(document).ready(function(){
+      $('h1').css('color','red')
+    }) 
+    // document가 준비가 되면 스크립트를 적용한다. 상단에 스크립트 적용시
+
+    // $(function() {
+    //   $('h1').css('color','red')
+    // }) 상단에 스크립트 적용시 축양형
+     
+    // $('h1').css('fontSize','50px')  스크립트가 문서 아래에 적용될때는 document와 function을 생략하고 적용함.
+
+    $(function(){  //function은 문서아래쪽에 스크립트가 있을때 생략가능하나. 문서가 준비되면 스크립트르 적용한다.는 의미이므로 입력해둔다.
+      $('p').css('border','4px solid red')
+      $('#gnb').css('border','4px solid orange')
+      $('.logo').css('border','4px solid yellow')
+      $('#gnb>ul>li').css('border','4px solid green')
+      $('#visual+#content').css('border','4px solid navy')
+      $('#visual ~ #footer').css('border','4px solid purple')
+      $('div.util').css('border','4px solid pink')
+      $('.left,.right,#banner').css('border','4px solid gray')
+    })
+  </script>
+</body>
+</html>

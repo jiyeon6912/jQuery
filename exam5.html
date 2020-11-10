@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+</head>
+
+  <body>
+ <div><input type="text"></div>
+ <div><input type="password"></div>
+ <div><button>확인</button></div>
+
+ <div>
+   <input type="checkbox" name="css" id="css" checked='checked'>
+   <label for="css">css</label>
+ </div>
+
+ <div>
+   <select>
+     <option>과목선택</option>
+     <option value="javascript">javascript</option>
+     <option value="jquery">jquery-3</option>
+     <textarea cols="20" rows="5" disabled='disabled'></textarea>
+   </select>
+ </div>
+
+  </body>
+
+  <script>
+    // $(function(){
+    //   $('#m1').children().css('border','2px solid red') //매서드는 ()를 입력한다.
+    //   $('#m2').children().children('span').css('border','2px solid orange')
+    //   $('#m3 span').closest('div').css('border','2px solid yellow') 
+    //   $('#m4 > span.m').nextUntil('em').css('border','2px solid green') //nextUntil('em') em은 포함되지않고 그전 데이터까지
+    //   $('#m5 > span').filter('.m').css('border','2px solid blue') 
+    //   $('#m6 > div').has('span').css('border','2px solid navy') 
+    // })
+
+    $(function(){
+      $('input:text').css('background', 'red')
+      $('button').css('background', 'yellow')
+      $('input:checkbox + label').css('background', 'green')
+      $('option:selected').css('background', 'blue')
+      $('textarea:disabled').css('background', 'pink')
+      
+
+
+
+
+    })
+  </script>
+  </html>

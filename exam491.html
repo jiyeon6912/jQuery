@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+ #outer {
+   width: 500px;
+   height: 500px;
+   margin: 50px;
+   position: relative;
+   background: #ff6600;
+ }
+
+ #inner {
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   left: 80px;
+   top: 50px;
+   background: #ccc;
+ }
+  </style>
+</head>
+
+<body>
+
+  <div id="m1">내용1</div>
+  <div id="m2">내용2</div>
+
+
+</body>
+  
+  <script>
+
+$(function(){
+$('#m1').prepend('<p>1</p>')
+$('#m1').append('<p>2</p>')
+$('#m1').before('<p>3</p>')
+$('#m1').after('<p>4</p>')
+
+})
+  </script>
+
+</html>

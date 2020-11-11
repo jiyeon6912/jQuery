@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+ #outer {
+   width: 500px;
+   height: 500px;
+  margin: 0 auto;
+  border: 1px solid #333;
+  overflow: auto;  /*자료가 넘치면 스크롤이 생김 auto* overflow:hidden은 넘치는 부분 사라짐*/
+ }
+
+ .inner {
+   width: 1000px;
+   height: 1000px;
+   background: #ff6600;
+ }
+
+ #info {
+   position: fixed;
+   top: 0;
+   left: 50%;
+   width: 300px;
+   margin-left: -550px;
+  text-align: right;
+ }
+  </style>
+</head>
+
+<body>
+<div id="outer">
+  <div class="inner"></div>
+</div>
+
+<div id="info">
+  <span></span>
+  <button>클릭</button>
+</div>
+</body>
+  
+  <script>
+
+$(function(){
+var topValue = $('#outer').scrollTop()  //top 변수는 기존 시스템 변수일수있으므로 topValue변수로 변경하여 사용함.
+// console.log(topValue)
+var leftValue = $('#outer').scrollLeft()
+// console.log(leftValue)
+ $('#info span').text(`scrollTop : ${topValue} / scrollLeft : ${leftValue}`)
+
+ $('#outer').scroll(function(){
+   topValue = $('#outer').scrollTop()
+   leftValue = $('#outer').scrollLeft()
+   $('#info span').text(`scrollTop : ${topValue} / scrollLeft : ${leftValue}`)
+ })
+
+$('button').click(function(){
+  $('#outer').scrollTop(250).scrollLeft(250)
+})
+
+})
+  </script>
+
+</html>

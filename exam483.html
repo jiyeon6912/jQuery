@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+  <style>
+    
+  </style>
+</head>
+
+<body>
+
+  <div id="site">
+    <a href="http://www.daum.net" target="_blank">다음</a>
+    <a href="http://www.naver.net" target="_blank">네이버</a>
+    <a href="http://www.nate.com" target="_blank">네이트</a>
+
+  </div>
+  
+  <script>
+
+$(function(){
+ var siteName = $('#site > a:eq(0)').attr('href')
+ console.log(siteName)
+
+ $('#site > a:eq(1)')
+ .attr('href', 'http://m.naver.com')
+ .text('네이버모바일')
+
+ $('#site a').attr('title',function(){  //새창 title 속성을 추가한다.
+   return '새창'
+ })
+})
+  </script>
+</body>
+</html>

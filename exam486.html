@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+  <style>
+    
+  </style>
+</head>
+
+<body>
+
+  <div>내용1</div>
+  <div>내용2</div>
+  <div>내용3</div>
+  
+  <script>
+
+$(function(){
+  $('div').eq(0).css('background','red')  //하나의  css를 적용할때
+
+  $('div').eq(0).css({   // 여러개의 css를 적용할때 객체형태로 사용함. 역할은 addClass와 동일하나 동시사용시 !!addClass 보다 우선함.!!
+    background:'red',
+    fontSize: 100,
+    color: '#fff'
+    })
+
+})
+  </script>
+</body>
+</html>

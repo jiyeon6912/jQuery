@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+</head>
+<body>
+
+  <div class="m1">내용1</div>
+  <div class="m2">내용2</div>
+  <div class="m3">내용3</div>
+  
+  <script>
+  $(function(){
+    $('div').each(function(index,item){
+      // console.log(index,item)
+      console.log($(this).attr('class'))  //this는 div하나하나를 가리킨다.  jquery 매서드를 사용하기 위해서는 $(item) 형식을 갖추어야함.
+
+    })
+  })
+
+  $(function(){
+    var city =['서울','대전','대구','부산']
+    // $.map(city, function(value,index){
+    //   console.log(index, value)
+
+      var newCity = $.map(city, function(value,index){  //map은 새로운 배열을 리턴해준다.
+        if(index < 2) {
+          return value
+        }
+      })
+
+      console.log(newCity)
+    })
+  
+
+
+  </script>
+</body>
+</html>

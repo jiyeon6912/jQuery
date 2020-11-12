@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  height: 3000px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* 스크롤 이벤트가 부드럽게 일어나다. */
+
+#up {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  top: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#up.on {
+  opacity: 1;
+  visibility: visible;
+}
+
+#up a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  background: #333;
+  text-decoration: none;
+  color: #fff;
+}
+  </style>
+
+</head>
+<div id="wrap"></div>
+<div id="up"><a href="#">TOP</a></div>
+<body>
+
+
+</body>
+  
+  <script>
+
+$(function(){
+  $(window).scroll(function(){
+    console.log($(this).scrollTop())
+    var topValue = $(this).scrollTop()
+    if(topValue > 100) {
+      $('#up').addClass('on')
+
+    }else {
+      $('#up').removeClass('on')
+    }
+  })
+ $('#up a').click(function(e){
+  e.preventDefault
+  $(window).scrollTop(0)
+  
+ })
+})
+  </script>
+
+</html>

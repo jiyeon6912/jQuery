@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.5.1.js"></script> 
+  <style>
+    * {
+      margin: 5px;
+     
+    }
+    span {
+      display: block;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background: #ff6600;
+      position: relative;  /*animate method 적용할때 필요함*/
+    }
+
+
+  </style>
+</head>
+<body>
+  <button>play</button><button>stop()</button>
+<div class="m1"></div>
+
+<button>play</button><button>stop(true)</button>
+<div class="m2"></div>
+
+<button>play</button><button>stop(true,false)</button>
+<div class="m3"></div>
+
+<button>play</button><button>stop(true,true)</button>
+<div class="m4"></div>
+
+
+</body>
+
+
+  
+  <script>
+
+$(function(){
+
+ function move(target) {
+   target = $(target)
+   target//
+   .animate({left:200},2000)
+   .animate({width:200},2000)
+   .animate({height:200},2000)
+}
+
+$('button:eq(0)').click(function(){
+  move('.m1')
+ $(this).prop('disabled',true) 
+})
+
+$('button:eq(1)').click(function(){
+  $('.m1').stop()
+})
+ 
+})
+  </script>
+
+</html>

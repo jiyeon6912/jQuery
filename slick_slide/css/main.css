@@ -103,6 +103,7 @@
   opacity: 0;
   transform: rotate(180deg);
   animation: ani_rotate 0.5s 0.8s forwards;
+  /* animation: ani_rotate 0.5s 0.8s infinite; */
 }
 
 .slide_text .info {
@@ -119,6 +120,20 @@
   font-size: 12px;
   padding: 16px 34px;
   border-radius: 6px;
+  animation: ani_flashing 1s 4s 2;
+}
+
+/* typing animation */
+
+.slide_text p.info {
+  /* text-align: center; */
+  font-size: 20px;
+  /* font-weight: bold; */
+  /* position: relative; */
+  /* display: inline-block; */
+  height: 35px;
+  overflow: hidden;
+  animation: ani_typing 3s 1s steps(120, end) 1; /*애니메이션 빠르기, 순차적 시작시간*/
 }
 
 /* animation */
@@ -152,6 +167,26 @@
   100% {
     opacity: 1;
     transform: rotate(0deg);
+  }
+}
+
+@keyframes ani_typing {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes ani_flashing {
+  0% {
+    background: rgb(57, 96, 212);
+    color: #fff;
+  }
+  100% {
+    background: rgb(212, 57, 70);
+    color: #111;
   }
 }
 
